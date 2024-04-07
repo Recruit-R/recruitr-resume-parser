@@ -1,19 +1,13 @@
 from flask import Flask
+from flask import request
 from pyresparser import ResumeParser
+import base64
+import io
+import os
 
 app = Flask(__name__)
-
-@app.route("/")
-def hello_world():
-    return "<p>Hello world</p>"
-@app.route("/testlocal")
-def test_local():
-    data = ResumeParser('test_resume.pdf').get_extracted_data()
-    return data    
-
-#for cloud function
-#@functions_framework.http
-def parse_resume(request):
+@app.route("/", methods=['POST'])
+def parse_resume():
     print(request)
     try:
         data = request.json.get('data')
@@ -25,11 +19,16 @@ def parse_resume(request):
             return return_data
         else:
             return {
-            'success': False,
-            'message': 'No data found in the request'
+                'success': False,
+                'message': 'No data found in the request'
             }
     except Exception as e:
         return {
-        'success': False,
-        'message': str(e)
+            'success': False,
+            'message': str(e)
         }
+if __name__ == '__main__':
+    # Get the port from the environment variable if available, otherwise use 8080
+    port = int(os.environ.get('PORT', 8080))
+    # Run the Flask app with the specified host and port
+    app.run(debug=True, host='0.0.0.0', port=port)
