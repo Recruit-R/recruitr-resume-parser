@@ -14,6 +14,6 @@ run these commands in order in the cloud shell
 
 6.  gcloud run deploy --image=gcr.io/certain-tendril-419122/resume-parser:v2 --platform=managed
 
-
+you can test the deploy with this command
 curl command
 curl -X POST https://resume-parser-upglu46dla-ul.a.run.app -H "Content-Type: application/json" -d '{"data": "'$(base64 -w 0 ../OmkarResume.pdf)'" }'
