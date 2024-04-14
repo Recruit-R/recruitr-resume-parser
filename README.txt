@@ -1,8 +1,12 @@
 resume parser for senior project
 
-Mkae sure this version of spacey is installed
+Make sure this version of spacey is installed
 
 1. python -m pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.3.1/en_core_web_sm-2.3.1.tar.gz
+
+Run run.sh file
+
+1. 
 
 
 run these commands in order in the cloud shell
