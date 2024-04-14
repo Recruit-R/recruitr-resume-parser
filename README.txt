@@ -7,7 +7,7 @@ Mkae sure this version of spacey is installed
 
 run these commands in order in the cloud shell
 
-1.  docker build -t gcr.io/certain-tendril-419122/resume-parser:v2
+1.  docker build -t gcr.io/certain-tendril-419122/resume-parser:v2 .
 
 2.  gcloud auth configure-docker
 
