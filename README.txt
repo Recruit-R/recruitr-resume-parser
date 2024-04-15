@@ -21,3 +21,7 @@ run these commands in order in the cloud shell
 you can test the deploy with this command
 curl command
 curl -X POST https://resume-parser-upglu46dla-ul.a.run.app -H "Content-Type: application/json" -d '{"data": "'$(base64 -w 0 ../OmkarResume.pdf)'" }'
+
+with api key
+curl -X POST https://resume-parser-upglu46dla-ul.a.run.app -H "X-goog-api-key: AIzaSyBfGCILGlBM75cjowucaKHSOleoS8hufYg" -H "Content-Type: application/json" -d '{"data": "'$(base64 -w 0 ../OmkarResume.pdf)'" }'
+
